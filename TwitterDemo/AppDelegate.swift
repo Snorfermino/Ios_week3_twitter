@@ -48,23 +48,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let requestToken = BDBOAuth1Credential(queryString: url.query)
         
-        let twitterConsumerKey = "JxUiG0fZyXliskmGJZYLjZcc4"
-        let twitterConsumerSecret = "2rW7IMZQ9Iz73JTwm800PGoaRHTPa3Vz59nDRXx2I1NIEaiipo"
-        let twitterBaseURL = NSURL(string: "https://api.twitter.com")
-        
-        let twitterClient = BDBOAuth1SessionManager(baseURL: twitterBaseURL, consumerKey: twitterConsumerKey, consumerSecret: twitterConsumerSecret)
+        let twitterClient = BDBOAuth1SessionManager(baseURL: NSURL(string: "https://api.twitter.com"), consumerKey: "yourConsumerKey", consumerSecret: "yourConsumerSecret")
         
         twitterClient.fetchAccessTokenWithPath("oauth/access_token", method: "POST", requestToken: requestToken, success: { (accessToken: BDBOAuth1Credential!) in
             print("I got access token = \(accessToken.token)")
             
             // get my account
             twitterClient.GET("1.1/account/verify_credentials.json", parameters: nil, progress: nil, success: { (task: NSURLSessionDataTask, response: AnyObject?) in
-                print("\(response)")
+                
+                let userDictionary = response as! NSDictionary
+                let user = User(dictionary: userDictionary)
+                
+                print("\(user.name!)")
+                print("\(user.screenName!)")
+                print("\(user.tagline!)")
+                print("\(user.profileImageUrl)")
                 
                 }, failure: { (task: NSURLSessionDataTask?, error: NSError) in
                     print("\(error.localizedDescription)")
             })
             
+            // get home timeline
+            twitterClient.GET("1.1/statuses/home_timeline.json", parameters: nil, progress: nil, success: { (task: NSURLSessionDataTask, response: AnyObject?) in
+                let dictionaries = response as! [NSDictionary]
+                let tweets = Tweet.tweetsWithArray(dictionaries)
+                
+                for tweet in tweets {
+                    print(tweet.text!)
+                }
+                
+                }, failure: { (task:NSURLSessionDataTask?, error: NSError) in
+                    print("\(error.localizedDescription)")
+            })
             
         }) { (error: NSError!) in
             print("\(error.localizedDescription)")

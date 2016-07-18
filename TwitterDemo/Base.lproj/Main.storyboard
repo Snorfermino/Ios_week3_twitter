@@ -40,7 +40,7 @@
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <segue destination="9Sh-4f-3XS" kind="presentation" identifier="loginSegue" id="g5U-Sp-T4J"/>
+                        <segue destination="GDf-DV-qOb" kind="presentation" identifier="loginSegue" id="g5U-Sp-T4J"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -58,22 +58,33 @@
                     <view key="view" contentMode="scaleToFill" id="NYG-kp-qea">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DJD-HE-PTD">
-                                <rect key="frame" x="146" y="175" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <navigationItem key="navigationItem" id="2LG-wk-hw5">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="0zW-E2-aIS"/>
+                        <barButtonItem key="rightBarButtonItem" title="Tweet" id="Dj9-ge-vbT"/>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                    <connections>
-                        <outlet property="welcomeLabel" destination="DJD-HE-PTD" id="gQY-EV-Bbj"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="jg1-WW-DuS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1044" y="314"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="LvR-U4-Rj5">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="GDf-DV-qOb" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AeI-zy-wUV">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="9Sh-4f-3XS" kind="relationship" relationship="rootViewController" id="7cW-NS-Qz6"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vf1-3b-kyz" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="632" y="314"/>
         </scene>

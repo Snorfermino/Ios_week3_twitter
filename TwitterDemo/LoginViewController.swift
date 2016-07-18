@@ -10,10 +10,6 @@ import UIKit
 import AFNetworking
 import BDBOAuth1Manager
 
-let twitterConsumerKey = "JxUiG0fZyXliskmGJZYLjZcc4"
-let twitterConsumerSecret = "2rW7IMZQ9Iz73JTwm800PGoaRHTPa3Vz59nDRXx2I1NIEaiipo"
-let twitterBaseURL = NSURL(string: "https://api.twitter.com")
-
 class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
@@ -30,7 +26,7 @@ class LoginViewController: UIViewController {
     @IBAction func onLogin(sender: UIButton) {
         print("login")
         // TODO: Get request token, redirect to authURL, convert requestToken -> accessToken
-        let twitterClient = BDBOAuth1SessionManager(baseURL: twitterBaseURL, consumerKey: twitterConsumerKey, consumerSecret: twitterConsumerSecret)
+        let twitterClient = BDBOAuth1SessionManager(baseURL: NSURL(string: "https://api.twitter.com"), consumerKey: "yourConsumerKey", consumerSecret: "yourConsumerSecret")
         
         // To make sure whoever login before, logout first
         twitterClient.deauthorize()

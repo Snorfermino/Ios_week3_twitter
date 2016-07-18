@@ -13,6 +13,8 @@
 		18EAAC8E1D3B66D500339F69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18EAAC8C1D3B66D500339F69 /* LaunchScreen.storyboard */; };
 		18EAAC961D3B673C00339F69 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EAAC951D3B673C00339F69 /* LoginViewController.swift */; };
 		18EAAC981D3B742E00339F69 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EAAC971D3B742E00339F69 /* HomeViewController.swift */; };
+		18EAAC9C1D3BE79200339F69 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EAAC9B1D3BE79200339F69 /* User.swift */; };
+		18EAAC9E1D3BEBA100339F69 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18EAAC9D1D3BEBA100339F69 /* Tweet.swift */; };
 		4B19E246BD8BD2452D7B50C9 /* Pods_TwitterDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DA911F484A6F55EBD31D17B /* Pods_TwitterDemo.framework */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +27,8 @@
 		18EAAC8F1D3B66D500339F69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		18EAAC951D3B673C00339F69 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		18EAAC971D3B742E00339F69 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		18EAAC9B1D3BE79200339F69 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		18EAAC9D1D3BEBA100339F69 /* Tweet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		7DA911F484A6F55EBD31D17B /* Pods_TwitterDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TwitterDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7B6BB79BA89414731DE58E6 /* Pods-TwitterDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TwitterDemo/Pods-TwitterDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		BB66B382004619DB20C05E52 /* Pods-TwitterDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TwitterDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-TwitterDemo/Pods-TwitterDemo.release.xcconfig"; sourceTree = "<group>"; };
@@ -63,15 +67,33 @@
 		18EAAC821D3B66D500339F69 /* TwitterDemo */ = {
 			isa = PBXGroup;
 			children = (
+				18EAAC9A1D3BE75E00339F69 /* ViewControllers */,
+				18EAAC991D3BE75800339F69 /* Models */,
 				18EAAC831D3B66D500339F69 /* AppDelegate.swift */,
 				18EAAC871D3B66D500339F69 /* Main.storyboard */,
-				18EAAC971D3B742E00339F69 /* HomeViewController.swift */,
-				18EAAC951D3B673C00339F69 /* LoginViewController.swift */,
 				18EAAC8A1D3B66D500339F69 /* Assets.xcassets */,
 				18EAAC8C1D3B66D500339F69 /* LaunchScreen.storyboard */,
 				18EAAC8F1D3B66D500339F69 /* Info.plist */,
 			);
 			path = TwitterDemo;
+			sourceTree = "<group>";
+		};
+		18EAAC991D3BE75800339F69 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				18EAAC9B1D3BE79200339F69 /* User.swift */,
+				18EAAC9D1D3BEBA100339F69 /* Tweet.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		18EAAC9A1D3BE75E00339F69 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				18EAAC971D3B742E00339F69 /* HomeViewController.swift */,
+				18EAAC951D3B673C00339F69 /* LoginViewController.swift */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 		1A793ACD20D33B4BE31D3961 /* Pods */ = {
@@ -214,6 +236,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18EAAC9C1D3BE79200339F69 /* User.swift in Sources */,
+				18EAAC9E1D3BEBA100339F69 /* Tweet.swift in Sources */,
 				18EAAC961D3B673C00339F69 /* LoginViewController.swift in Sources */,
 				18EAAC841D3B66D500339F69 /* AppDelegate.swift in Sources */,
 				18EAAC981D3B742E00339F69 /* HomeViewController.swift in Sources */,
