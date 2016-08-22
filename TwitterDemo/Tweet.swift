@@ -14,13 +14,13 @@ class Tweet: NSObject {
     var createdAtString: String?
     var createdAt: NSDate?
     var timeSinceCreated: String?
-    
+    var id: Int?
     var retweetCount = 0
     var favCount = 0
     
     
     init(dictionary: NSDictionary) {
-        
+        id = dictionary["id"] as? Int
         user = User(dictionary: dictionary["user"] as! NSDictionary)
         text = dictionary["text"] as? String
         createdAtString = dictionary["created_at"] as? String

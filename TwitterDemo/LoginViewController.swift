@@ -9,8 +9,11 @@
 import UIKit
 import AFNetworking
 import BDBOAuth1Manager
+import MBProgressHUD
 
 class LoginViewController: UIViewController {
+    
+    var requestToken:String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,27 +28,21 @@ class LoginViewController: UIViewController {
     
     @IBAction func onLogin(sender: UIButton) {
         print("login")
-        // TODO: Get request token, redirect to authURL, convert requestToken -> accessToken
-        let twitterClient = BDBOAuth1SessionManager(baseURL: NSURL(string: "https://api.twitter.com"), consumerKey: "yourConsumerKey", consumerSecret: "yourConsumerSecret")
         
-        // To make sure whoever login before, logout first
-        twitterClient.deauthorize()
+        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        let client = TwitterClient.sharedInstance
         
-        twitterClient.fetchRequestTokenWithPath("oauth/request_token", method: "POST", callbackURL: NSURL(string: "bluebird123://oauth"), scope: nil, success: { (requestToken: BDBOAuth1Credential!) in
-            
-            print("I got request token = \(requestToken.token)")
-            
-            // TODO: redirect to authrization url
-            let authUrl = NSURL(string: "https://api.twitter.com/oauth/authorize?oauth_token=\(requestToken.token)")!
-            UIApplication.sharedApplication().openURL(authUrl)
-            
+        client.login({ 
+            print("I've logged in!")
+            self.performSegueWithIdentifier("loginSegue", sender: nil)
         }) { (error: NSError!) in
-            
-            print("\(error.localizedDescription)")
+                print("Error: \(error.localizedDescription)")
         }
         
+
     }
     
+
     /*
      // MARK: - Navigation
      
